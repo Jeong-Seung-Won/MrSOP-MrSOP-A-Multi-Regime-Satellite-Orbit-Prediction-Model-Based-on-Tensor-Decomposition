@@ -64,13 +64,13 @@ The default configuration samples every 15th state from the 1-minute trajectorie
 Train using the manuscript training schedule:
 
 ```bash
-python train.py --config configs/mrsop_paper.yaml
+python train.py --config configs/mrsop.yaml
 ```
 
 # Inference
 
 ```bash
-python inference.py --config configs/mrsop_paper.yaml \
+python inference.py --config configs/mrsop.yaml \
   --checkpoint checkpoints/mrsop_paper_best.pt \
   --input data/input.npy \
   --output outputs/prediction.npy \
@@ -84,7 +84,7 @@ python inference.py --config configs/mrsop_paper.yaml \
 Evaluate on the in-domain test manifest:
 
 ```bash
-python evaluate.py --config configs/mrsop_paper.yaml
+python evaluate.py --config configs/mrsop.yaml
 ```
 
 ## Zero-shot
@@ -92,15 +92,15 @@ python evaluate.py --config configs/mrsop_paper.yaml
 For zero-shot evaluation, prepare ephemeris CSV files with columns `epoch_ms, x, y, z, vx, vy, vz` in kilometers and kilometers per second. Use the same coordinate frame as the training data. The released evaluation assumes TEME states.
 
 ```bash
-python evaluate_zeroshot.py --config configs/mrsop_paper.yaml \
+python evaluate_zeroshot.py --config configs/mrsop.yaml \
   --checkpoint checkpoints/mrsop_paper_best.pt \
   --source starlink --data-dir data/starlink --device cuda
 
-python evaluate_zeroshot.py --config configs/mrsop_paper.yaml \
+python evaluate_zeroshot.py --config configs/mrsop.yaml \
   --checkpoint checkpoints/mrsop_paper_best.pt \
   --source gnss --data-dir data/gnss --device cuda
 
-python evaluate_zeroshot.py --config configs/mrsop_paper.yaml \
+python evaluate_zeroshot.py --config configs/mrsop.yaml \
   --checkpoint checkpoints/mrsop_paper_best.pt \
   --source beidou --data-dir data/beidou --device cuda
 ```
