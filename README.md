@@ -71,7 +71,7 @@ python train.py --config configs/mrsop.yaml
 
 ```bash
 python inference.py --config configs/mrsop.yaml \
-  --checkpoint checkpoints/mrsop_paper_best.pt \
+  --checkpoint checkpoints/mrsop_best.pt \
   --input data/input.npy \
   --output outputs/prediction.npy \
   --device cuda
@@ -93,14 +93,14 @@ For zero-shot evaluation, prepare ephemeris CSV files with columns `epoch_ms, x,
 
 ```bash
 python evaluate_zeroshot.py --config configs/mrsop.yaml \
-  --checkpoint checkpoints/mrsop_paper_best.pt \
+  --checkpoint checkpoints/mrsop_best.pt \
   --source starlink --data-dir data/starlink --device cuda
 
 python evaluate_zeroshot.py --config configs/mrsop.yaml \
-  --checkpoint checkpoints/mrsop_paper_best.pt \
+  --checkpoint checkpoints/mrsop_best.pt \
   --source gnss --data-dir data/gnss --device cuda
 
 python evaluate_zeroshot.py --config configs/mrsop.yaml \
-  --checkpoint checkpoints/mrsop_paper_best.pt \
+  --checkpoint checkpoints/mrsop_best.pt \
   --source beidou --data-dir data/beidou --device cuda
 ```
