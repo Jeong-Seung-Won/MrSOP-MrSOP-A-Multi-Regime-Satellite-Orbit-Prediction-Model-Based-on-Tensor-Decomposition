@@ -57,7 +57,7 @@ data/
 
 To check the pipeline without real data, `python examples/make_demo_data.py` writes synthetic manifests, arrays, and ephemeris CSV files to `data/demo/`.
 
-The default configuration samples every 15th state from the 1-minute trajectories. Each window uses 192 input steps and 96 forecast steps, corresponding to 48 hours of context and a 24-hour forecast horizon. Each segment must contain at least 4,306 raw rows.
+The default configuration samples every 15th state from the 1-minute trajectories. Each window uses 192 input steps and 96 forecast steps, corresponding to 48 hours of context and a 24-hour forecast horizon.
 
 # Training
 
